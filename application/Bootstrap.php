@@ -15,6 +15,10 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 		$arrConfig = Yaf_Application::app()->getConfig();
 		Yaf_Registry::set('config', $arrConfig);
 	}
+    
+    public function _initLoader(){
+    	$result = Yaf_Loader::getInstance();
+    }
 
 	public function _initPlugin(Yaf_Dispatcher $dispatcher) {
 		//注册一个插件
@@ -30,8 +34,6 @@ class Bootstrap extends Yaf_Bootstrap_Abstract {
 	public function _initView(Yaf_Dispatcher $dispatcher) {
 		//在这里注册自己的view控制器，例如smarty,firekylin
 		//关闭Yaf View
-		$view = new TBView();
-		$view->test();
 		$view = Yaf_Dispatcher::getInstance();
 		$view->disableView();
 	}

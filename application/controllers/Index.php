@@ -1,11 +1,12 @@
 <?php
 
-class IndexController extends ControllerExtends {
+class IndexController extends Yaf_Controller_Abstract {
 	public function indexAction() {
-		echo $this->layouts;
 		echo 111;
 	}
 	public function secondAction() {
+		$v = I('get.v','',Null);
+		var_dump($v);
 		echo 'second';
 	}
 }
